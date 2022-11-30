@@ -1,7 +1,18 @@
+using Microsoft.AspNetCore.Mvc.Razor;
+using ServerSide1_KontaktBogEksempel.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.Configure<RazorViewEngineOptions>(options =>
+{
+    //Får den til at søge efter Partial Views i en defineret mappe
+    options.PageViewLocationFormats.Add("/Pages/PartialViews/{0}" + RazorViewEngine.ViewExtension);
+});
+
+builder.Services.AddSingleton<IContactService, ContactService>();
 
 var app = builder.Build();
 
