@@ -3,11 +3,11 @@
     public class ContactInfo
     {
 
-        public required int ContactId { get; set; }
+        public int ContactId { get; set; }
 
         public required string Name { get; set; }
 
-        public string Email { get; set; } = string.Empty;
+        public required string Email { get; set; }
 
         public string Phone { get; set; } = string.Empty;
 

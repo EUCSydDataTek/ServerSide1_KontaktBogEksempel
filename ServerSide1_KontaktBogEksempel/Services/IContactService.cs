@@ -9,5 +9,6 @@ namespace ServerSide1_KontaktBogEksempel.Services
 
         public ContactInfo GetContact(int id);
 
+        public void AddContact(ContactInfo contact);
     }
 }

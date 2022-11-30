@@ -4,7 +4,6 @@
     ViewData["Title"] = "Home page";
 }
 
-<partial name="ContactList" model="Model.Contacts" />
+<a asp-page="NewContact" class="btn btn-primary btn-sm">Ny kontakt</a>
 
-@*Kan lave deadlocks*@
-@*@Html.Partial(nameof(Pages_PartialViews_ContactList),Model.Contacts);*@ 
+<partial name="ContactList" model="Model.Contacts" />
