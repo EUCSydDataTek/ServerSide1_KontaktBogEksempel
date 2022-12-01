@@ -20,3 +20,13 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.contact-thumbnail {
+    width: 50px;
+    height: 50px;
+    border: solid 2px black;
+}
+
+.contact-DefaultImage {
+    background-color:whitesmoke;
+}

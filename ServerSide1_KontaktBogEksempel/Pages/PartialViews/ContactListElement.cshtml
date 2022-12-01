@@ -2,7 +2,18 @@
 @model ContactInfo
 
 <tr>
-    <th scope="row">@Model.Name</th>
+
+    <th scope="row">
+        @if (string.IsNullOrWhiteSpace(Model.ImagePath))
+        {
+            <img class="contact-thumbnail contact-DefaultImage" src="@Model.DefaultImage" />
+        }
+        else
+        {
+            <img class="contact-thumbnail" src="@Model.ImagePath" />
+        }
+    </th>
+    <td>@Model.Name</td>
     <td>@Model.Email</td>
     <td>@Model.Phone</td>
 </tr>
