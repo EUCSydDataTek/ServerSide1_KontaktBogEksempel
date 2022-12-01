@@ -28,6 +28,11 @@ namespace ServerSide1_KontaktBogEksempel.Services
             return _Contacts?.Where(c => c.ContactId == id)?.FirstOrDefault();
         }
 
+        public int GetContactCount()
+        {
+            return _Contacts.Count();
+        }
+
         public List<ContactInfo> GetContacts()
         {
             return _Contacts.ToList();
