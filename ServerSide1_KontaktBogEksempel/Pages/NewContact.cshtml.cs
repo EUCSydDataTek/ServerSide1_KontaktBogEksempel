@@ -5,6 +5,7 @@ using ServerSide1_KontaktBogEksempel.Services;
 
 namespace ServerSide1_KontaktBogEksempel.Pages
 {
+    [IgnoreAntiforgeryToken]
     public class NewContactModel : PageModel
     {
 
